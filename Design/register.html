@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem 4rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"], input[type="email"], input[type="password"], input[type="date"], input[type="file"] , input[type="number"], select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #5cb85c;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+    input[type="submit"]:hover {
+      background-color: #4cae4c;
+    }
+    .error-message {
+      color: red;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Registration Form</h2>
+
+  <?php
+  if (isset($error)) {
+      echo "<div class='error-message'>$error</div>";
+     }
+  ?>
+  <form action="register.php" method="POST" enctype="multipart/form-data">
+    <label for="img">Profile Picture</label>
+    <input type="file" id="img" name="img" accept="image/*" required>
+
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="confirm_password">Confirm Password</label>
+    <input type="password" id="confirm_password" name="confirm_password" required>
+
+
+
+
+
+
+
+    <label for="status">Status</label>
+    <select id="status" name="status" required>
+      <option value="">Select Status</option>
+      <option value="single">Single</option>
+      <option value="married">Married</option>
+    </select>
+
+    <input type="submit" value="Register">
+  </form>
+  <a style="color: #4cae4c" href="Login.php">Return to Login</a>
+</div>
+
+</body>
+</html>
